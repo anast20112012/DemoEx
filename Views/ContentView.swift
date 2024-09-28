@@ -4,7 +4,7 @@
 //
 //
 //
-// https://github.com/anast20112012/DEMO.git
+// https://github.com/anast20112012/DemoEx.git
 //
 //
 
@@ -132,7 +132,7 @@ struct ContentView: View {
                 VStack 
                 {
                     Button("Sign Up", action: {
-                        
+                        checkAllFie()
                         
                         if userViewModel.user.name != "" {isShowingDetailView = true}
                         else {isShowAlert.toggle()}
@@ -157,7 +157,7 @@ struct ContentView: View {
                         if checkBox  {isShowingDetailView = true
                             isShowAlert7.toggle()}
                         else {isShowAlert8.toggle()}
-                        checkAllFie()
+                        
                        
                         isShowingDetailView = false
                         

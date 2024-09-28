@@ -34,12 +34,14 @@ struct SecondView: View {
             
             
             Text("Welcome back")
-                .font(.custom("Roboto-Black", size: 30))
+                .font(.custom("Roboto-Bold", size: 30))
             
-            Text("vvedite email and parol")
-                .font(.custom("Roboto", size: 15))
+            Text("Fill in your email and password to continue")
+                .font(.custom("Roboto-Bold", size: 15))
                 .foregroundColor(.gray)
                 .padding(.top, 5)
+            
+            
             Text("Email")
                 .font(.system(size: 15))
                 .padding(.top)
@@ -70,7 +72,11 @@ struct SecondView: View {
             .padding(.top)
             
          
-                
+            Text("Я не успела сделать окно с выводом ошибки, если пользователя нет (т.е он просто ничего не сделает), поэтому попробуйте, пожалуйста, оба варианта")
+                .font(.custom("Roboto-Bold", size: 15))
+                .foregroundColor(.gray)
+                .padding(.top, 90)
+            
                 Button("log in", action: {
                     userViewModel.logIn()
                     checkAllFie()
@@ -89,7 +95,6 @@ struct SecondView: View {
                 .background(Color.white)
                 .cornerRadius(10)
                 .foregroundColor(.white)
-                .padding(.top, 100)
             
             
             HStack{
@@ -100,6 +105,7 @@ struct SecondView: View {
                 NavigationLink("sign up", destination: ContentView())
                 
             }
+            .padding(.top,20)
             
             Text("or sign in using")
                 .font(.system(size: 15))

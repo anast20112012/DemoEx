@@ -15,6 +15,17 @@ struct OTPView: View {
     @StateObject var userViewModel = UserViewModel()
     @State private var isShowingDetailView = false
     @State var isShowAlert = false
+    
+    @State var allFieldChec: Bool = false
+    func checkAllFie() {      //функция которая отвечает за покраску кнопки если введены все значения
+        if !var1.isEmpty && !var2.isEmpty && !var3.isEmpty && !var4.isEmpty && !var5.isEmpty && !var6.isEmpty {
+            self.allFieldChec = true
+        }
+        else {
+            self.allFieldChec = false
+        }
+    }
+    
     var body: some View {
   
         VStack(alignment: .leading){
@@ -79,7 +90,8 @@ struct OTPView: View {
                  
                 Button("Send OTP", action: {
                     
-                    if !var1.isEmpty && !var2.isEmpty && !var3.isEmpty && !var4.isEmpty && !var5.isEmpty && !var6.isEmpty  { isShowingDetailView = true
+                    if !var1.isEmpty && !var2.isEmpty && !var3.isEmpty && !var4.isEmpty && !var5.isEmpty && !var6.isEmpty  { checkAllFie()
+                        isShowingDetailView = true
                         }
                     
                     else {
@@ -88,7 +100,7 @@ struct OTPView: View {
                 })
                 .frame(maxWidth: .infinity)
                 .padding()
-                .background( Color.gray)
+                .background(allFieldChec ? Color.blue : Color.gray)
                 .cornerRadius(5)
                 .padding(1)
                 .background(Color.white)

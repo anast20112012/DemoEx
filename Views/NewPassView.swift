@@ -15,7 +15,7 @@ struct NewPassView: View {
     
     @State var allFieldChec: Bool = false
     func checkAllFie() {
-        if !userViewModel.email.isEmpty && !newpass.isEmpty {
+        if !userViewModel.password.isEmpty && !newpass.isEmpty {
             self.allFieldChec = true
         }
         else {
@@ -59,11 +59,11 @@ struct NewPassView: View {
             
             CustomSecureField(placeholder: "*********", text: $newpass)
                 .alert(isPresented: $isShowAlert2) {
-                    Alert(title: Text("Не заполнили povtor"),
+                    Alert(title: Text("Не заполнили Confirum"),
                           dismissButton: .default(Text("OK")))
                 }
                 .alert(isPresented: $isShowAlert3) {
-                    Alert(title: Text("Ne sovpal parol"),
+                    Alert(title: Text("Пароли не совпадают"),
                           dismissButton: .default(Text("OK")))
                 } .font(.system(size: 15))
             
@@ -73,14 +73,15 @@ struct NewPassView: View {
                 
                 Button("Log in", action: {
                     userViewModel.logIn()
-                    checkAllFie()
-                    if userViewModel.password == newpass {isShowingDetailView = true
+                    
+                    if userViewModel.password == newpass {
+                        checkAllFie()
+                        isShowingDetailView = true
                     }
                     else {isShowAlert3.toggle()
                         isShowingDetailView = false
                     }
-                    //  isShowingDetailView = false
-                    //isShowAlert.toggle()
+           
                     userViewModel.signUp()
                 })
                 .frame(maxWidth: .infinity)

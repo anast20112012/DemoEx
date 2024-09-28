@@ -14,6 +14,7 @@ class UserViewModel: ObservableObject{
         @Published var isNavigate: Bool = false
         @Published  var error: Bool = false
         
+    //функция регистрации, имя телефон почта и пароль
         func signUp() {
                         Task {
                             do {
@@ -35,7 +36,7 @@ class UserViewModel: ObservableObject{
                         }
                     }
     
-    
+    //функция авторизации, по почте и паролю
     func logIn() {
                     Task {
                         do {

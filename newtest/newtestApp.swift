@@ -1,8 +1,4 @@
-//
-//  newtestApp.swift
-//  newtest
-//
-//  Created by user on 23.09.2024.
+//  Created by Panasuk AD on 28.09.2024.
 //
 
 import SwiftUI
